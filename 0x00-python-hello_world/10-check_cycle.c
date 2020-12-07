@@ -1,7 +1,7 @@
-#include "list.h"
+#include "lists.h"
 
 /**
- * check_cycle - Linked list cycle 
+ * check_cycle - Linked list cycle
  * @list: list
  * Return: 0 if there is no cycle, 1 if there is a cycle
  */
