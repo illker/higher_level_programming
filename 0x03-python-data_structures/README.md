@@ -39,7 +39,7 @@ What is the del statement and how to use it
 14. CPython #0: Python lists 
 
 
-* David Alzate² 
+## David Alzate² 
 
 <[GitHub - Illker](https://github.com/illker)>
 
