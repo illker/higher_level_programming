@@ -1,9 +1,3 @@
 #!/usr/bin/python3
-square_matrix_map = \
-    __import__('101-square_matrix_map').square_matrix_map
-
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+def square_matrix_map(matrix=[]):
+    return list(map(lambda row: list(map(lambda x: x*x, row)), matrix))
