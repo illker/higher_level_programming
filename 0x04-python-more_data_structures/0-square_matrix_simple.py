@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    matrixf = []
+    matrixc = []
     for n in matrix:
-        matrixc = []
-        for x in n:
-            matrixc.append(pow(x, 2))
-        matrixf.append(matrixc)
-    return matrixf
+        matrixf = list(map(lambda x: x ** 2, n))
+        matrixc.append(matrixf)
+    return matrixc
