@@ -1,50 +1,72 @@
 #!/usr/bin/python3
-"""Def class Square with size"""
+"""Defines a class Square"""
 
 
 class Square:
-    """square class methods"""
+    """Represents a square
+    Attributes:
+        __size (int): size of a size of the square
+        __position (tuple): position of the square in 2D space
+    """
 
     def __init__(self, size=0, position=(0, 0)):
-        """method init size"""
+        """initializes the square
+        Args:
+            size (int): size of a side of the square
+            position (tuple): positoin of the square in 2D space
+        Returns:
+            None
+        """
+        self.size = size
+        self.position = position
 
-        self.__size = size
-        self.__position = position
-
-    """property"""
+    def area(self):
+        """calculates the square's area
+        Returns:
+            The area of the square
+        """
+        return (self.__size) ** 2
 
     @property
     def size(self):
-        """size property"""
-
+        """getter of __size
+        Returns:
+            The size of the square
+        """
         return self.__size
-
-    """property"""
 
     @size.setter
     def size(self, value):
-        """size setter"""
-
-        if type(value) != int:
+        """setter of __size
+        Args:
+            value (int): size of a side of the square
+        Returns:
+            None
+        """
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
-
-    """property"""
+        else:
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = value
 
     @property
     def position(self):
-        """position property"""
-
+        """getter of __position
+        Returns:
+            The position of the square in 2D space
+        """
         return self.__position
-
-    """position setter"""
 
     @position.setter
     def position(self, value):
-        """def position setter"""
-        
+        """setter of __position
+        Args:
+            value (tuple): position of the square in 2D space
+        Returns:
+            None
+        """
         if type(value) is not tuple or len(value) != 2 or \
            type(value[0]) is not int or value[0] < 0 or \
            type(value[1]) is not int or value[1] < 0:
@@ -52,23 +74,16 @@ class Square:
         else:
             self.__position = value
 
-    """method area"""
-
-    def area(self):
-        """method area"""
-
-        return self.__size ** 2
-
-    """print square"""
-
     def my_print(self):
-        """size property"""
-
+        """prints the square
+        Returns:
+            None
+        """
         if self.__size == 0:
             print()
             return
         for i in range(self.__position[1]):
             print()
         for j in range(self.__size):
-            print("{}{}".format(" " * self.__position[0], "#" * self.__size))
-
+            print("".join([" " for k in range(self.__position[0])]), end="")
+            print("".join(["#" for l in range(self.__size)]))
