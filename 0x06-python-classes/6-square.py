@@ -7,6 +7,7 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """method init size"""
+
         self.__size = size
         self.__position = position
 
@@ -15,6 +16,7 @@ class Square:
     @property
     def size(self):
         """size property"""
+
         return self.__size
 
     """property"""
@@ -22,6 +24,7 @@ class Square:
     @size.setter
     def size(self, value):
         """size setter"""
+
         if type(value) != int:
             raise TypeError("size must be an integer")
         if value < 0:
@@ -33,6 +36,7 @@ class Square:
     @property
     def position(self):
         """position property"""
+
         return self.__position
 
     """position setter"""
@@ -40,6 +44,7 @@ class Square:
     @position.setter
     def position(self, value):
         """def position setter"""
+
         if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
         if all(value) < 0:
@@ -50,12 +55,14 @@ class Square:
 
     def area(self):
         """method area"""
+
         return self.__size ** 2
 
     """print square"""
 
     def my_print(self):
         """size property"""
+
         if self.__size == 0:
             print()
             return
