@@ -1,0 +1,60 @@
+===========
+add_integer
+===========
+
+Import module:
+
+  >>> add_integer = __import__('0-add_integer').add_integer
+
+Test intergers:
+
+  >>> add_integer(1, 1)
+  2
+  >>> add_integer(1, 2)
+  3
+  >>> add_integer(-5, 40)
+  35
+  >>> add_integer(-5, -10)
+  -15
+
+Test floats:
+
+  >>> add_integer(5.4, 10.688)
+  15
+  >>> add_integer(1.1, 2)
+  3
+  >>> add_integer(-5.5, 40)
+  35
+  >>> add_integer(-5.6898, -10.2)
+  -15
+
+Other Cases:
+
+  >>> add_integer(1)
+  99
+  >>> add_integer(10)
+  108
+
+  >>> add_integer(2, 4, 6)
+  Traceback (most recent call last):
+  ...
+  TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+  >>> add_integer()
+  Traceback (most recent call last):
+  ...
+  TypeError: add_integer() missing 1 required positional argument: 'a'
+
+  >>> add_integer("x", 100)
+  Traceback (most recent call last):
+  ...
+  TypeError: a must be an integer
+
+  >>> add_integer(100, "x")
+  Traceback (most recent call last):
+  ...
+  TypeError: b must be an integer
+
+  >>> import os
+  >>> os.open("pep8 0-add_integeer.py").read()
+  ''
