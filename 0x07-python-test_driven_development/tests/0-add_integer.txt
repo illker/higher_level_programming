@@ -54,3 +54,7 @@ Other Cases:
   Traceback (most recent call last):
   ...
   TypeError: b must be an integer
+
+  >>> import os	
+  >>> os.open("pep8 0-add_integeer.py").read()	
+  ''
