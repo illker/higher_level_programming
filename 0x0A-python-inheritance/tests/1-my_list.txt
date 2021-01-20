@@ -1,0 +1,24 @@
+============
+my_list
+============
+
+Import module:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Test:
+
+	 >>> l.append(6)
+	 >>> l.append(24)
+	 >>> l.append(86)
+	 >>> print(l)
+	 [6, 24, 86]
+
+	 >>> burger = MyList([-5, 8, 123])
+	 >>> burger.print_sorted()
+	 [-5, 8, 123]
+
+	 >>> burger = MyList()
+	 >>> burger.print_sorted()
+	 []
+
