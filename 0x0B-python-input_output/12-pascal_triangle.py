@@ -3,14 +3,14 @@
 
 
 def pascal_triangle(n):
-    """list of lists of integers"""
+    """representing the Pascals"""
     if n <= 0:
-        return l = []
+        return []
 
     l = []
     trow = [1]
     y = [0]
     for x in range(n):
         l.append(trow)
-        trow = [left+right for left, right in zip(trow+y, y+trow)]
+        trow = [left + right for left, right in zip(trow + y, y + trow)]
     return l
