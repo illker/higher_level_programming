@@ -24,5 +24,4 @@ class Student():
 
     def reload_from_json(self, json):
         """method reload json"""
-        if json is not None:
-            self.__dict__ = json
+        return self.__dict__.update(json)
