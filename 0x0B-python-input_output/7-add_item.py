@@ -8,6 +8,5 @@ try:
     n = load_from_json_file("add_item.json")
 except:
     n = []
-
 n.extend(sys.argv[1:])
 save_to_json_file(n, "add_item.json")
