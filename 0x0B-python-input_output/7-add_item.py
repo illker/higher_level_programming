@@ -9,4 +9,5 @@ try:
 except:
     n = []
 
-save_to_json_file(n.extend(sys.argv[1:]), "add_item.json")
+n.extend(sys.argv[1:])
+save_to_json_file(n, "add_item.json")
