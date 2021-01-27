@@ -65,7 +65,7 @@ class Base():
         """list of instances"""
 
         tomato = []
-        cheese = cls.__name__ + ".csv"
+        cheese = cls.__name__ + ".json"
         if not os.path.isfile(cheese):
             return tomato
         with open(cheese, mode="r", encoding="utf-8") as meat:
