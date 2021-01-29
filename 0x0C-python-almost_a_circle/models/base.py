@@ -12,39 +12,38 @@ class Base():
     def __init__(self, id=None):
         """method init"""
 
-        if id is not None:
-            self.id = id
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = self.__nb_objects
         else:
-            __nb_objects += 1
-            self.id = __nb_objects
+            self.id = id
 
     @staticmethod
     def to_json_string(list_dictionaries):
         """JSON data representation"""
 
-        if list_dictionaries is None or list_dictionaries == []:
-            return "[]"
+        if list_dictionaries is None:
+            list_dictionaries = []
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
         """JSON string representation to file"""
 
-        burger = "{}.json".format(cls.__name__)
+        burger = cls.__name__ + ".json"
         bacon = []
-        if list_objs is None:
-            f.write(bacon)
-        else:
+        if list_objs is not None:
             for pepper in list_objs:
                 bacon.append(cls.to_dictionary(pepper))
-        with open(burger, "w", encoding="utf-8") as pizza:
+        with open(burger, "w") as pizza:
             pizza.write(cls.to_json_string(bacon))
+
 
     @staticmethod
     def from_json_string(json_string):
         """list of the JSON string representation"""
 
-        if json_string is None or len(json_string) < 1:
+        if json_string is None or len(json_string) == 0:
             return []
         else:
             return json.loads(json_string)
@@ -53,7 +52,7 @@ class Base():
     def create(cls, **dictionary):
         """instance with all attributes"""
 
-        if cls.__name__ == "Rectangle":
+        if cls.__name__ is "Rectangle":
             burger = cls(1, 1)
         elif cls.__name__ == "Square":
             burger = cls(1)
