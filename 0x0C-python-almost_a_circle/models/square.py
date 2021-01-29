@@ -23,6 +23,15 @@ class Square(Rectangle):
         self.width = size
         self.height = size
 
+    def __str__(self):
+        """__str__"""
+        i = self.id
+        x = self.x
+        y = self.y
+        w = self.width
+        s = "Square"
+        return ("[{}] ({}) {}/{} - {}".format(s, i, x, y, w))
+
     def update(self, *args, **kwargs):
         """updates method"""
         pizza = ['id', 'size', 'x', 'y']
