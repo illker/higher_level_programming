@@ -10,6 +10,7 @@ class Square(Rectangle):
         """init method"""
 
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     """setter and getter"""
 
