@@ -38,7 +38,6 @@ class Base():
         with open(burger, "w") as pizza:
             pizza.write(cls.to_json_string(bacon))
 
-
     @staticmethod
     def from_json_string(json_string):
         """list of the JSON string representation"""
