@@ -62,12 +62,34 @@ class Base():
     def load_from_file(cls):
         """list of instances"""
 
-        tomato = []
+        beer = []
         cheese = cls.__name__ + ".json"
         if not os.path.isfile(cheese):
-            return tomato
+            return beer
         with open(cheese, mode="r", encoding="utf-8") as meat:
-            burger = cls.from_json_string(f.read())
-            for add in burger:
-                burger_cheese.append(cls.create(**add))
-            return burger_cheese
+            burger = cls.from_json_string(meat.read())
+            for a in burger:
+                beer.append(cls.create(**a))
+            return beer
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+        burger = cls.__name__ + '.csv'
+        beer = [pizza.to_dictionary() for pizza in list_pizzas]
+        with open(burger, mode='w', encoding='utf-8') as file:
+            file.write(cls.to_json_string(beer))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes in CSV"""
+
+        beer = []
+        cheese = cls.__name__ + ".csv"
+        if not os.path.isfile(cheese):
+            return beer
+        with open(cheese, mode="r", encoding="utf-8") as meat:
+            burger = cls.from_json_string(meat.read())
+            for a in burger:
+                beer.append(cls.create(**a))
+            return beer
