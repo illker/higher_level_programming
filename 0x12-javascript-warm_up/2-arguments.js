@@ -1,5 +1,5 @@
 #!/usr/bin/node
-burger = process.argv.length;
+let burger = process.argv.length;
 if (burger < 3) {
   console.log('No argument');
 } else if (burger === 3) {
