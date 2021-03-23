@@ -4,4 +4,5 @@ exports.esrever = function (list) {
   for (let burger = list.length - 1; burger >= 0; burger--) {
     bacon.push(list[burger]);
   }
+  return bacon;
 };
