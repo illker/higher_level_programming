@@ -9,7 +9,8 @@ if __name__ == "__main__":
                          passwd=argv[2], db=argv[3])
     bacon = db.cursor()
     bacon.execute(
-        "SELECT * FROM states WHERE BINARY name='{}' ORDER BY id ASC".format(argv[4]))
+        "SELECT * FROM states WHERE BINARY name='{}'\
+            ORDER BY id ASC".format(argv[4]))
     burger = bacon.fetchall()
     for bu in burger:
         print(bu)
