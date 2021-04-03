@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""creates the State California with the City San Francisco from the database"""
+"""db advanced from the database"""
 
 import sqlalchemy
 from sqlalchemy import create_engine
