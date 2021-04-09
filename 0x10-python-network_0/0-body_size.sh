@@ -1,4 +1,4 @@
 #!/bin/bash
 # cURL body size
 
-curl -oI "$1" -w '%{size_download}\n'
+curl -soI "$1" -w '%{size_download}\n'
