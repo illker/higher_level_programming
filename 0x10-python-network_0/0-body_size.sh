@@ -1,3 +1,3 @@
 #!/bin/bash
 # cURL to the end
-curl -Is "$1" | grep Content-Length | cut -d " " -f2
+curl -oI "$1" -w '%{size_download}\n'
