@@ -4,10 +4,9 @@
 
 import requests
 from sys import argv
-import json
 
 if __name__ == "__main__":
 
-    r= requests.get('https://api.github.com/user', auth=(argv[1], argv[2]))
-    dic = r.json()
-    print(dic.get('id'))
+    r = requests.get('https://api.github.com/user', auth=(argv[1], argv[2]))
+    d = r.json()
+    print(d.get('id'))
